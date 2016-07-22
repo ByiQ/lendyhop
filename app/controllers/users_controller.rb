@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   end
 
   def user
-    user_name = params[:user_name] # retrieve movie ID from URI route
-    @user = User.find(user_name) # look up movie by unique ID
+    id = params[:id] # retrieve movie ID from URI route
+    @user = User.find(id) # look up movie by unique ID
     # will render app/views/movies/show.<extension> by default
   end
 
