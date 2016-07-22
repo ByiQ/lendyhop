@@ -1,7 +1,7 @@
 -#  This file is app/views/items/index.html.haml
-%h1 All Movies
+%h1 All Users
 
-%table#movies
+%table#users
   %thead
     %tr
       %th{:id => 'title_header', :class => ('hilite' if params[:sort] == "title") }
@@ -11,11 +11,11 @@
         = link_to 'Release Date', '?sort=release_date'
       %th More Info
   %tbody
-    - @movies.each do |movie|
+    - @users.each do |user|
       %tr
-        %td= movie.title 
-        %td= movie.rating
-        %td= movie.release_date
-        %td= link_to "More about #{movie.title}", movie_path(movie)
+        %td= user.user_name 
+        %td= user.firstname
+        %td= user.lastname
+        %td= link_to "More about #{movie.title}", movie_path(user)
 
 = link_to 'Add new movie', new_movie_path
