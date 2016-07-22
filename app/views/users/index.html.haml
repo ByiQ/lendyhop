@@ -2,20 +2,10 @@
 %h1 All Users
 
 %table#users
-  %thead
-    %tr
-      %th{:id => 'title_header', :class => ('hilite' if params[:sort] == "title") }
-        = link_to 'Movie Title', '?sort=title'
-      %th Rating
-      %th{:id => 'release_date_header', :class => ('hilite' if params[:sort] == "release_date") }
-        = link_to 'Release Date', '?sort=release_date'
-      %th More Info
   %tbody
     - @users.each do |user|
       %tr
         %td= user.user_name 
         %td= user.firstname
         %td= user.lastname
-        %td= link_to "More about #{movie.title}", movie_path(user)
-
-= link_to 'Add new movie', new_movie_path
+        %td= link_to "More about #{user.user_name}", user_path(user)
