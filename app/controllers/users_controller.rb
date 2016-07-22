@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     @user = User.find params[:user_name]
     @user.update_attributes!(user_params)
     flash[:notice] = "#{@user.user_name} was successfully updated."
-    redirect_to items_path(@user)
+    redirect_to users_path(@user)
   end
 
   def destroy
