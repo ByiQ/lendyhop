@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     params.require(:user_name, :firstname, :lastname, :address, :phone, :created_time).permit(:updated_time)
   end
 
-  def user
+  def show
     id = params[:id] # retrieve movie ID from URI route
     @user = User.find(id) # look up movie by unique ID
     # will render app/views/movies/show.<extension> by default
