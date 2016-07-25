@@ -2,7 +2,7 @@
 
 %h1 Edit User Info
 
-= form_tag update_user_path(@user), :method => :put do
+= form_tag user_path(@user), :method => :post do
 
   = label :user, :user_name, 'User Name'
   = text_field :user, :user_name
