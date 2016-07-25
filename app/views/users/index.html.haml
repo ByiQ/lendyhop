@@ -6,6 +6,8 @@
     - @users.each do |user|
       %tr
         %td= user.user_name 
-        %td= user.firstname
         %td= user.lastname
-        %td= link_to "More about #{user.user_name}", user_path(user)
+        %td= user.firstname
+        %td= user.phone
+        %td= user.address
+        %td= link_to "More about #{user.firstname}", user_path(user)

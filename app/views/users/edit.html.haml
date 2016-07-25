@@ -1,16 +1,22 @@
 -# edit.html.haml using partial
 
-%h1 Edit Existing Movie
+%h1 Edit User Info
 
-= form_tag movie_path(@movie), :method => :put do
+= form_tag user_path(@user), :method => :put do
 
-  = label :movie, :title, 'Title'
-  = text_field :movie, 'title'
+  = label :user, :user_name, 'User Name'
+  = text_field :user, 'user_name'
+  
+  = label :user, :firstname, 'First Name'
+  = text_field :user, 'firstname'
 
-  = label :movie, :rating, 'Rating'
-  = select :movie, :rating, ['G','PG','PG-13','R','NC-17']
+  = label :user, :lastname, 'Last Name'
+  = text_field :user, 'lastname'
+  
+  = label :user, :address, 'Address'
+  = text_field :user, 'address'
+  
+  = label :user, :phone, 'Phone Number'
+  = text_field :user, 'phone'
 
-  = label :movie, :release_date, 'Released On'
-  = date_select :movie, :release_date
-
-  = submit_tag 'Update Movie Info'
+  = submit_tag 'Update User Info'
