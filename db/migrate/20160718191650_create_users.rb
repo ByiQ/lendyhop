@@ -26,8 +26,8 @@ class CreateUsers < ActiveRecord::Migration
       t.belongs_to :item,          null: false, index: true, foreign_key: true
       t.belongs_to :user,          null: false, index: true, foreign_key: true
       t.string :checkout_time_out, null: false
-      t.string :checkout_time_in
-      t.datetime :created_time,    null: false
+      t.string :checkout_time_in,  null: false
+      t.datetime :created_time
       t.datetime :updated_time
     end
     
