@@ -11,6 +11,6 @@
     %br
     = @user.phone
 
-= link_to 'Edit', edit_user_path(@user)
-= button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Edit', edit_users_path(@user)
+= button_to 'Delete', users_path(@user), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to user list', users_path
