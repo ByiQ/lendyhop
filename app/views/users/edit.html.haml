@@ -5,18 +5,18 @@
 = form_tag user_path(@user), :method => :post do
 
   = label :user, :user_name, 'User Name'
-  = text_field :user, :user_name
+  = text_field :user, 'user_name'
   
   = label :user, :firstname, 'First Name'
-  = text_field :user, :firstname
+  = text_field :user, 'firstname'
 
   = label :user, :lastname, 'Last Name'
-  = text_field :user, :lastname
+  = text_field :user, 'lastname'
   
   = label :user, :address, 'Address'
-  = text_field :user, :address
+  = text_field :user, 'address'
   
   = label :user, :phone, 'Phone Number'
-  = text_field :user, :phone
+  = text_field :user, 'phone'
 
   = submit_tag 'Update User Info'
