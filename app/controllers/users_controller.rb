@@ -36,12 +36,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    #begin
-    #@movie = Movie.find(params[:id])
-    #@movie.destroy
-    #flash[:notice] = "Movie '#{@movie.title}' deleted."
-    #redirect_to movies_path
-    #end
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:notice] = "User '#{@user.firstname}' deleted."
+    redirect_to user_path
   end
 
   private
