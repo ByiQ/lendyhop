@@ -2,10 +2,7 @@
 
 %h2 Details about #{@user.firstname}
 
-%h4
-    = @user.lastname
-    , 
-    = @user.firstname
+%h4 #{@user.lastname}, #{@user.firstname}
 %br
 %p
     = @user.user_name
@@ -15,5 +12,5 @@
     = @user.phone
 
 = link_to 'Edit', edit_user_path(@user)
-= button_to 'Delete', movie_path(@user), :method => :delete, :confirm => 'Are you sure?'
+= button_to 'Delete', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to user list', users_path
