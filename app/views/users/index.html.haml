@@ -11,3 +11,5 @@
         %td= user.phone
         %td= user.address
         %td= link_to "More about #{user.firstname}", user_path(user)
+        
+= link_to 'Add new user', new_user_path
