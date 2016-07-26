@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def user_params
-    params.require(:user_name).permit(:firstname, :lastname, :address, :phone, :created_time, :updated_time)
+    params.require(:user).permit(:user_name, :firstname, :lastname, :address, :phone, :created_time, :updated_time)
   end
 
   def show
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update_attributes(user_params)
+    @user.update_attributes!(user_params)
     flash[:notice] = "#{@user.firstname} was successfully updated."
     redirect_to user_path(@user)
   end
