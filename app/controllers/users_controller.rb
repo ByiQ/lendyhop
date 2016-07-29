@@ -32,6 +32,12 @@ class UsersController < ApplicationController
     # @user = User.find params[:user_name]
     # session[:userID] = @user.id
   end
+  
+  def verify
+    @user = User.find params[:user_name]
+    session[:userID] = @user.id
+    redirect_to user_path(@user)
+  end
 
   def update
     @user = User.find(params[:id])
