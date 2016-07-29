@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :users do
-    get 'user/login' => 'user#login', :as => :login_user
+    get 'user/login' => 'user#login', :as => :login_user_path
   end
   resources :items
   
