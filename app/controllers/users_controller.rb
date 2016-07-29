@@ -29,8 +29,8 @@ class UsersController < ApplicationController
   end
   
   def login
-    @user = User.find params[:user_name]
-    session[:userID] = @user.id
+    # @user = User.find params[:user_name]
+    # session[:userID] = @user.id
   end
 
   def update
