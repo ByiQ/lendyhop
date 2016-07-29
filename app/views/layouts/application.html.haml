@@ -10,7 +10,7 @@
     %h1.title LendyHop
     
     %h1.login
-      = link_to 'Login', {:controller => 'user' , :action => 'login'}
+      = link_to 'Login', {:controller => 'users', :action => 'login'}
       
     #main
       - if flash[:notice]
