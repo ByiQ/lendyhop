@@ -35,10 +35,11 @@ class UsersController < ApplicationController
   
   def verify
     name = user_params[:user_name]
-    @user = User.where(user_name: name).find
+    @user = User.where(user_name: name)
     # session[:userID] = @user.id
-    puts name
-    puts @user
+    @user.each do |user|
+      puts user
+    end
     flash[:notice] = "Successful login: #{name}."
     redirect_to user_path(@user)
   end
