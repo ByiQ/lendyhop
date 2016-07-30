@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     # session[:userID] = @user.id
     puts name
     puts @user
-    flash[:notice] = "Successful login: #{@user.firstname}."
+    flash[:notice] = "Successful login: #{name}."
     redirect_to user_path(@user)
   end
 
