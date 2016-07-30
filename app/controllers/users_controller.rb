@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   
   def verify
     name = user_params[:user_name]
-    @user = User.where("user.user_name LIKE '#{name}'")
+    @user = User.where("users.user_name LIKE '#{name}'")
     # session[:userID] = @user.id
     puts @user
     flash[:notice] = "Successful login: #{@user.firstname}."
