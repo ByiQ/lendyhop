@@ -3,7 +3,7 @@
 %h1 Login
 
 %div{ :class => 'full-center' }
-  = form_tag verify_user_path(@user), :method => :put do
+  = form_tag verify_user_path(@user), :method => :get do
 
     = label :user, :user_name, 'User Name'
     = text_field :user, :user_name
