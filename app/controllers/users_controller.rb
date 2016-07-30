@@ -36,8 +36,8 @@ class UsersController < ApplicationController
   def verify
     puts "VERIFY"
     name = user_params[:user_name]
-    @user = User.find_by user_name: name
-    puts @user.take
+    @user = Userwhere(["user_name = ?", name]).first
+    puts @user
     puts "USER"
     # session[:userID] = @user.id
     flash[:notice] = "Successful login: #{name}."
