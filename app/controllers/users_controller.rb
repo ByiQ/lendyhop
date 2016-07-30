@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   end
   
   def verify
-    #name = user_params[:user_name]
+    logger.info user_params[:user_name]
     #@user = User.where(["user_name = ?", name]).first
     #@user = @user.to_hash
     # session[:userID] = @user.id
