@@ -34,15 +34,12 @@ class UsersController < ApplicationController
   end
   
   def verify
-    puts "VERIFY"
-    name = user_params[:user_name]
-    @user = User.where(["user_name = ?", name]).first
-    @user = @user.to_hash
-    puts @user
-    puts "USER"
+    #name = user_params[:user_name]
+    #@user = User.where(["user_name = ?", name]).first
+    #@user = @user.to_hash
     # session[:userID] = @user.id
-    flash[:notice] = "Successful login: #{name}."
-    redirect_to user_path(@user)
+    flash[:notice] = "Successful login: 1."
+    redirect_to user_path(1)
   end
 
   def update
