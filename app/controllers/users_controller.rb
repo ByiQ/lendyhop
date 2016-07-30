@@ -37,6 +37,7 @@ class UsersController < ApplicationController
     puts "VERIFY"
     name = user_params[:user_name]
     @user = User.where(["user_name = ?", name]).first
+    @user = user.to_hash
     puts @user
     puts "USER"
     # session[:userID] = @user.id
