@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   end
   
   def login
+    @user
     # @user = User.find params[:user_name]
     # session[:userID] = @user.id
   end
