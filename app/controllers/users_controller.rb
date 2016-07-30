@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     puts "VERIFY"
     name = user_params[:user_name]
     @user = User.find_by user_name: name
-    puts @user
+    puts @user.take
     puts "USER"
     # session[:userID] = @user.id
     flash[:notice] = "Successful login: #{name}."
