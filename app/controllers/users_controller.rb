@@ -35,7 +35,9 @@ class UsersController < ApplicationController
   end
   
   def verify
+    logger.info "START"
     logger.info User.where(["user_name = ?", user_params[:user_name]]).first
+    logger.info "END"
     #@user = @user.to_hash
     # session[:userID] = @user.id
     flash[:notice] = "Successful login: 1."
