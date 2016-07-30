@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   
   def verify
     name = user_params[:user_name]
-    @user = User.where(user_name: name)
+    @user = User.where(user_name: name).first
     # session[:userID] = @user.id
     puts name
     puts @user
