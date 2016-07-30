@@ -34,8 +34,9 @@ class UsersController < ApplicationController
   end
   
   def verify
-    name = params[:user_name]
+    name = params[:user][:user_name]
     puts params
+    puts name
     @user = User.where(user_name: name)
     # session[:userID] = @user.id
     flash[:notice] = "Successful login: #{@user.user_name}."
