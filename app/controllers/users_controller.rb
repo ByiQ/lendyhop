@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   end
   
   def verify
+    puts "VERIFY"
     name = user_params[:user_name]
     @user = User.find_by user_name: name
     # session[:userID] = @user.id
