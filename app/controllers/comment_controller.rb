@@ -5,7 +5,6 @@ class ItemsController < ApplicationController
   end
 
   def new
-    puts @comment
     puts comment_paramas
   end
 
