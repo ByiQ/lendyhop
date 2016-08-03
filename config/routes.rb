@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   resources :items
   
   resources :comments
+  resource :comment do
+    put 'new'
+  end
   
   # Example resource route with options:
   #   resources :products do
