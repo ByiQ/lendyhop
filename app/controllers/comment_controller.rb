@@ -5,7 +5,10 @@ class ItemsController < ApplicationController
   end
 
   def new
-    puts comment_paramas
+  end
+  
+  def submit
+    puts "tomb"
   end
 
   def create

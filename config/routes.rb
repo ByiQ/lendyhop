@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   
   resources :comments
   resource :comment do
-    put 'new'
+    put 'submit'
   end
   
   # Example resource route with options:
