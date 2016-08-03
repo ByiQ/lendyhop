@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    if (session[:user] == nil || session[:user].id < 1)
+    if (session[:user] == nil)
       flash[:notice] = "Please log in to submit an item"
       redirect_to items_path
     end
@@ -23,7 +23,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @user = Item.create!(item_params)
+    item_params[:user] = session[:user]
+    @item = Item.create!(item_params)
     flash[:notice] = "#{@item.title} was successfully created."
     redirect_to items_path
   end
