@@ -17,3 +17,10 @@
     = link_to 'Edit', edit_item_path(@item)
     
 = link_to 'Back to listings', items_path
+
+= form_tag create_comment_path(@comment), :method => :put do
+
+  = label :item, :comment, 'Add Comment'
+  = text_field :item, :comment
+  
+  = submit_tag 'Submit'
