@@ -4,6 +4,21 @@
 
 = form_tag item_path(@item), :method => :put do
 
-  = submit_tag 'Update Listing'
+  = label :item, :description, 'Description'
+  = text_field :item, :description
 
+  = label :item, :price, 'Price'
+  = text_field :item, :price
+  
+  = label :item, :location, 'Location'
+  = text_field :item, :location
+  
+  = label :item, :condition, 'Condition'
+  = text_field :item, :condition
+  
+  = label :item, :status, 'Status'
+  = text_field :item, :status
+  
+  = submit_tag 'Update Listing'
+  
 = button_to 'Delete', item_path(@item), :method => :delete, :confirm => 'Are you sure?'
