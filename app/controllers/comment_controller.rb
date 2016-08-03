@@ -8,18 +8,14 @@ class CommentsController < ApplicationController
   end
   
   def submit
-    puts params
-  end
-
-  def create
     @par = comment_params
     if (session[:user] == nil)
       flash[:notice] = "Please log in to submit an comment"
-      redirect_to item_path(comment_params[:item_id])
+      redirect_to item_path(@par[:item_id])
     end
     @par[:user_id] = session[:user]['id']
     @comment = Comment.create!(@par)
-    redirect_to item_path(comment_params[:item_id])
+    redirect_to item_path(@par[:item_id])
   end
 
 end
