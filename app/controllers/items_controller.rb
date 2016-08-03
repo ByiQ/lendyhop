@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   def show
     id = params[:id] # retrieve movie ID from URI route
     @item = Item.find(id) # look up movie by unique ID
+    @item.user = User.find item[:user_id]
     # will render app/views/movies/show.<extension> by default
   end
 
