@@ -1,0 +1,25 @@
+-# in app/views/items/index.html.haml
+
+%h2 List an Item
+
+= form_tag items_path do
+
+  = label :item, :title, 'Title'
+  = text_field :item, :title
+  
+  = label :item, :description, 'Description'
+  = text_field :item, :description
+
+  = label :item, :price, 'Price'
+  = text_field :item, :price
+  
+  = label :item, :location, 'Location'
+  = text_field :item, :location
+  
+  = label :item, :condition, 'Condition'
+  = text_field :item, :condition
+  
+  = label :item, :status, 'Status'
+  = text_field :item, :status
+
+  = submit_tag 'Create Listing'

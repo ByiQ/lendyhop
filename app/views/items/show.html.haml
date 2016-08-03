@@ -1,0 +1,31 @@
+-# in app/views/users/show.html.haml
+
+%h2 Details about #{@item.title}
+
+%h3 #{@item.title} - #{@item.price}
+%p
+    = @item.description
+    %br
+    %br
+    = @item.condition
+    %br
+    = @item.status
+    %br
+    = @item.location
+
+- if (session[:user] != nil && session[:user]["id"] == @item.user["id"])
+    = link_to 'Edit', edit_item_path(@item)
+    
+= link_to 'Back to listings', items_path
+
+- @comments.each do |comment|
+    %p= comment.comment
+
+= form_tag submit_comment_path(@comment), :method => :put do
+
+    = hidden_field :comment, :item_id, :value => @item.id
+
+    = label :comment, :comment, 'Add Comment'
+    = text_field :comment, :comment
+  
+    = submit_tag 'Submit'

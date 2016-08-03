@@ -1,0 +1,15 @@
+-#  This file is app/views/items/index.html.haml
+%h1 All Users
+
+%table#users
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.user_name 
+        %td= user.lastname
+        %td= user.firstname
+        %td= user.phone
+        %td= user.address
+        %td= link_to "More about #{user.firstname}", user_path(user)
+        
+= link_to 'Add new user', new_user_path
