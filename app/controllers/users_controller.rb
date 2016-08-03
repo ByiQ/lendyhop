@@ -38,6 +38,7 @@ class UsersController < ApplicationController
     name = user_params[:user_name]
     @user = User.where(["user_name = ?", name]).first
     session[:user] = @user
+    session[:username] = @user.user_name;
     redirect_to items_path
     #redirect_to user_path(@user.id)
   end
