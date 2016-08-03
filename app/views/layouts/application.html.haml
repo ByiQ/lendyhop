@@ -11,11 +11,9 @@
     
     %h1.login
       - if (session[:user] == nil || session[:user].id < 1)
-        'Login'
-        // = link_to 'Login', login_user_path
+        = link_to 'Login', login_user_path
       - else
-        'Logout'
-        // #{session[:user].user_name}
+        #{session[:user].user_name}
       
     #main
       - if flash[:notice]
