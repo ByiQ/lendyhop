@@ -4,6 +4,11 @@ class ItemsController < ApplicationController
     params.require(:comment).permit(:item_id, :user_id, :comment)
   end
 
+  def new
+    puts @comment
+    puts comment_paramas
+  end
+
   def create
     @par = comment_params
     if (session[:user] == nil)
