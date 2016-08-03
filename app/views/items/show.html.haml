@@ -18,6 +18,9 @@
     
 = link_to 'Back to listings', items_path
 
+- @comments.each do |comment|
+    %p= comment.comment
+
 = form_tag submit_comment_path(@comment), :method => :put do
 
     = hidden_field :comment, :item_id, :value => @item.id
