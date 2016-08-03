@@ -1,3 +1,3 @@
 class Item < ActiveRecord::Base
-    # attr_accessible
+    attr_accessor :user_name
 end
