@@ -10,7 +10,7 @@
     %h1.title LendyHop
     
     %h1.login
-      - if (session[:user] == nil || session[:user][:id] < 1)
+      - if (session[:user] == nil || session[:user][:id].to_i < 1)
         = link_to 'Login', login_user_path
       - else
         = session[:user].user_name
