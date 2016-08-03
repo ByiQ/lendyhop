@@ -13,7 +13,7 @@
     %br
     = @item.location
 
-- if (session[:user] != nil && @item['user'] != nil)
+- if (session[:user] != nil)
     = link_to 'Edit', edit_item_path(@item)
     
 = link_to 'Back to listings', items_path
