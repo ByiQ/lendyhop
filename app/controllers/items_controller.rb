@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
 
   def show
     @comments = Comment.all
+    @comment = Comment
     id = params[:id] # retrieve movie ID from URI route
     @item = Item.find(id) # look up movie by unique ID
     @item.user = User.find @item[:user_id]
