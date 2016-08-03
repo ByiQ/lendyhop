@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   
   resources :items
   
+  resources :comments
+  
   # Example resource route with options:
   #   resources :products do
   #     member do
