@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    if (!session[:userID])
+    if (session[:userID].nil || session[:userID] < 1)
       flash[:notice] = "Please log in to submit an item"
       redirect_to items_path
     end
