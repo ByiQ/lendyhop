@@ -2,6 +2,8 @@
 
 %h2 List an Item
 
+= form_tag items_path do
+
   = label :item, :title, 'Title'
   = text_field :item, :title
   
