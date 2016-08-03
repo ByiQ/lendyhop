@@ -18,7 +18,7 @@
     
 = link_to 'Back to listings', items_path
 
-= form_tag submit_comment_path(@comment), :method => :put do
+= form_tag submit_comment_path(@comment, @item), :method => :put do
 
     = label :comment, :comment, 'Add Comment'
     = text_field :comment, :comment

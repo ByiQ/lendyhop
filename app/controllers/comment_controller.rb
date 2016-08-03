@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   end
   
   def submit
-    puts "tomb"
+    puts params
   end
 
   def create
