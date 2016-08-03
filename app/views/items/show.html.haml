@@ -13,6 +13,7 @@
     %br
     = @item.location
 
+= @item
 - if (session[:user] != nil && @item.user != nil)
     = link_to 'Edit', edit_item_path(@item)
     
