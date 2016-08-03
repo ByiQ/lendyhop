@@ -12,6 +12,9 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    @items.each do |item|
+      item[:user_name] = User.find item[:user_id]
+    end
   end
 
   def new

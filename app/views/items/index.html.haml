@@ -2,5 +2,15 @@
 
 %h3
     = link_to 'Create Listing', new_item_path
-
+    
 %h2 Available Items
+
+%table#items
+  %tbody
+    - @items.each do |item|
+      %tr
+        %td= item.title
+        %td= item.description
+        %td= item.condition
+        %td= item.status
+        %td= link_to "More about #{item.title}", item_path(item)
