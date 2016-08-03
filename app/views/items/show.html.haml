@@ -1,6 +1,19 @@
 -# in app/views/users/show.html.haml
 
-%h2 Details about '#ITEM'
+%h2 Details about #{@item.title}
 
-= link_to 'Edit', edit_item_path(@item)
+%h3 #{@item.title} - #{@item.price}
+%p
+    = @item.description
+    %br
+    %br
+    = @item.condition
+    %br
+    = @item.status
+    %br
+    = @item.location
+
+- if (@item.user['id'] == session[:user]['id'])
+    = link_to 'Edit', edit_item_path(@item)
+    
 = link_to 'Back to listings', items_path
