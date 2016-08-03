@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:item_id, :user_id, :comment)
