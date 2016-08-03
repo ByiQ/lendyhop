@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    item_params[:user] = session[:user]
+    item_params[:user] = session[:user]['id']
     @item = Item.create!(item_params)
     flash[:notice] = "#{@item.title} was successfully created."
     redirect_to items_path
