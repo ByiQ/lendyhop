@@ -20,7 +20,7 @@
 
 = form_tag new_comment_path(@comment), :method => :put do
 
-    = label :item, :comment, 'Add Comment'
-    = text_field :item, :comment
+    = label :comment, :comment, 'Add Comment'
+    = text_field :comment, :comment
   
     = submit_tag 'Submit'
