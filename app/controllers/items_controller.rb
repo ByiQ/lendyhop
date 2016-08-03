@@ -15,13 +15,17 @@ class ItemsController < ApplicationController
   end
 
   def new
+    if (!session[:userID])
+      flash[:notice] = "Please log in to submit an item"
+      redirect_to items_path
+    end
     #default: render 'new' template
   end
 
   def create
     @user = Item.create!(item_params)
     flash[:notice] = "#{@item.title} was successfully created."
-    redirect_to users_path
+    redirect_to items_path
   end
 
   def edit

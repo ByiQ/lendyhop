@@ -1,0 +1,9 @@
+-# edit.html.haml using partial
+
+%h1 Edit Listing
+
+= form_tag item_path(@item), :method => :put do
+
+  = submit_tag 'Update Listing'
+
+= button_to 'Delete', item_path(@item), :method => :delete, :confirm => 'Are you sure?'
