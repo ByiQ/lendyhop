@@ -130,6 +130,12 @@ table#checkout td, table#checkout th {
   border-top-color: #A0A0A0;
   border-bottom-color: #A0A0A0;
 }
+table#checkout td:nth-child(2n), table#checkout th:nth-child(2n) {
+  background: #F0F0F0;
+}
+table#checkout td:nth-child(2n+1), table#checkout th:nth-child(2n+1) {
+  background: #FFFFFF;
+}
 table#checkout thead {
   border-bottom: solid 1px #404040;
 }
