@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   resources :tags
   resource :tag do
     put 'submit'
+    put 'destroy'
   end
   
   # Example resource route with options:

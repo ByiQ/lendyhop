@@ -16,7 +16,7 @@ class TagsController < ApplicationController
   def destroy
     @tag = Tag.find(params[:id])
     @tag.destroy
-    redirect_to item_path(params[:item_id])
+    redirect_to items_path
   end
 
 end
