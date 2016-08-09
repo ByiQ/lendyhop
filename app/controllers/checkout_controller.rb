@@ -5,8 +5,7 @@ class CheckoutsController < ApplicationController
   end
 
   def new
-    puts params
-    # @item = Item.find(params[:item])
+    @item = Item.find(params[:id])
   end
 
   def create
