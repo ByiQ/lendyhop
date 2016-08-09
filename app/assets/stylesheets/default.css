@@ -119,16 +119,16 @@ form label {
 }
 
 table#checkout {
-  
+  border-collapse: collapse;
 }
-table#checkout td {
+table#checkout td, table#checkout th {
   width: 7em;
   text-align: center;
   border: solid 1px;
-  border-left: #808080;
-  border-right: #808080;
-  border-top: #A0A0A0;
-  border-bottom: #A0A0A0;
+  border-left-color: #808080;
+  border-right-color: #808080;
+  border-top-color: #A0A0A0;
+  border-bottom-color: #A0A0A0;
 }
 table#checkout thead {
   border-bottom: solid 1px #404040;
