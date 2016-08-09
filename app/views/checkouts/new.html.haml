@@ -3,6 +3,8 @@
 %h2 Checkout an Item
 
 = form_tag checkouts_path do
+    = hidden_field :checkout, :item_id, :value => @item.id
+    = hidden_field :checkout, :user_id, :value => session[:user]["id"]
     %table#checkout
         %thead
             %tr

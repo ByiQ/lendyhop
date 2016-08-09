@@ -37,7 +37,7 @@
                         = submit_tag '+'
     %tr
         %td{ :colspan => "2" }
-            = link_to 'Checkout', new_checkout_path
+            = link_to 'Checkout', new_checkout_path(@item)
 
 - if (session[:user] != nil && session[:user]["id"] == @item.user["id"])
     = link_to 'Edit', edit_item_path(@item)
