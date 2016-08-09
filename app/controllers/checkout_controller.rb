@@ -18,7 +18,7 @@ class CheckoutsController < ApplicationController
         bintime = (bintime | (pars[prefix << suffix].to_i & 1)) << 1
       end
     end
-    @par = { :item_id => pars[:item_id], :user_id => pars[:user_id], :bintime => @bintime }
+    @par[:bintime] = bintime
     @checkout = Checkout.create!(@par)
     redirect_to item_path(@par[:item_id])
   end
