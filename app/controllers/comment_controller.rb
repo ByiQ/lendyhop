@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
       flash[:notice] = "Please log in to submit an comment"
       redirect_to item_path(@par[:item_id])
     end
-    @par[:user_id] = session[:user]['id']
+    @par[:user_id] = session[:userID]['id']
     @comment = Comment.create!(@par)
     redirect_to item_path(@par[:item_id])
   end
