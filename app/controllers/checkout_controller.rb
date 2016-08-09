@@ -43,7 +43,7 @@ class CheckoutsController < ApplicationController
     bintime = 0b0
     days.each do |prefix|
       slots.each do |suffix|
-        bintime = (bintime | (pars[prefix << suffix].to_i & 1)) << 1
+        bintime = (bintime | (pars[prefix + suffix].to_i & 1)) << 1
       end
     end
     @par = checkout_params
