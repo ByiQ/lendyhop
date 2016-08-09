@@ -28,6 +28,11 @@ Rails.application.routes.draw do
     put 'submit'
   end
   
+  resources :tags
+  resource :tag do
+    put 'submit'
+  end
+  
   # Example resource route with options:
   #   resources :products do
   #     member do
