@@ -19,12 +19,13 @@ class CheckoutsController < ApplicationController
     @slots = _slots
     totalbintime = 0b0
     reserves.each do |reserve|
-      totalbintime |= reserve.bintime
+      totalbintime = totalbintime | reserve.bintime
     end
     @taken = {}
     @days.reverse.each do |prefix|
       @slots.reverse.each do |suffix|
-        @taken[prefix << suffix] = totalbintime & 1
+        t = prefix << suffix
+        @taken[t] = totalbintime & 1
         totalbintime >> 1
       end
     end
