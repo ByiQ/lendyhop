@@ -1,7 +1,7 @@
-class TagsController < ApplicationController
+class CheckoutsController < ApplicationController
 
-  def tag_params
-    params.require(:tag).permit(:item_id, :tag)
+  def checkout_params
+    params.require(:checkout).permit(:item_id, :user_id, :bintime)
   end
 
   def new
