@@ -1,3 +1,3 @@
 class Checkout < ActiveRecord::Base
-    #attr_accessor :item
+    attr_accessor :bintime
 end
