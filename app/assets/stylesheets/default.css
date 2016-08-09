@@ -36,7 +36,7 @@ a {
   float: right;
   color: #F4F4F4;
 }
-.listing {
+.listing, .ind_item {
   border-radius: 0.3em;
   border: 0.1em solid #A0A0A0;
   margin-bottom: 0.6em;
@@ -46,22 +46,22 @@ a {
   margin-right: auto;
   padding: 0.3em;
 }
-.listing > .l_left {
+.l_left, .ind_main {
   width: 80%;
   display: table-cell;
   float: left;
 }
-.listing > .l_left > div:first-child, .listing > .l_right > div:first-child {
+.l_left > div:first-child, .l_right > div:first-child, .ind_info div {
   margin-bottom: 0.2em
 }
-.listing > .l_right {
+.listing > .l_right, .ind_item > .ind_info {
   display: table-cell;
   float: right;
 }
-.listing > .l_right > div {
+.l_right > div, .ind_info_top > div {
   display: table-row;
 }
-.listing > .l_right > div > div {
+.l_right > div > div, .ind_info_top > div > div {
   display: table-cell;
   width: 50%;
 }
