@@ -2,6 +2,45 @@
 
 %h2 Checkout an Item
 
-= form_tag items_path do
-
-  = submit_tag 'Checkout'
+= form_tag checkouts_path do
+    %table
+        %thead
+            %tr
+                %th
+                %th Monday
+                %th Tuesday
+                %th Wednesday
+                %th Thursday
+                %th Friday
+                %th Saturday
+                %th Sunday
+        %tbody
+            %tr
+                %td Morning
+                %td= check_box_tag :mm
+                %td= check_box_tag :tm
+                %td= check_box_tag :wm
+                %td= check_box_tag :rm
+                %td= check_box_tag :fm
+                %td= check_box_tag :sm
+                %td= check_box_tag :um
+            %tr
+                %td Afternoon
+                %td= check_box_tag :ma
+                %td= check_box_tag :ta
+                %td= check_box_tag :wa
+                %td= check_box_tag :ra
+                %td= check_box_tag :fa
+                %td= check_box_tag :sa
+                %td= check_box_tag :ua
+            %tr
+                %td Evening
+                %td= check_box_tag :me
+                %td= check_box_tag :te
+                %td= check_box_tag :we
+                %td= check_box_tag :re
+                %td= check_box_tag :fe
+                %td= check_box_tag :se
+                %td= check_box_tag :ue
+  
+    = submit_tag 'Checkout'
