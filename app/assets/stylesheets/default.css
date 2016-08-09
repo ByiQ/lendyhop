@@ -57,8 +57,12 @@ a {
 .listing > .l_right {
   display: table-cell;
 }
+.listing > .l_right > div {
+  display: table;
+}
 .listing > .l_right > div > div {
-  display: inline-block;
+  display: table-cell;
+  width: 50%;
 }
 .right {
   text-align: right;
