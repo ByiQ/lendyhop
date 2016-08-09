@@ -4,6 +4,11 @@ class CheckoutsController < ApplicationController
     params.require(:checkout).permit(:item_id, :user_id, :bintime)
   end
 
+  def new
+    puts params
+    @item = Item.find(params[:item])
+  end
+
   def create
     pars = params
     days = [ 'm', 't', 'w', 'r', 'f', 's', 'u' ]
