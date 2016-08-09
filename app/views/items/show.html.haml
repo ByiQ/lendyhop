@@ -39,6 +39,6 @@
     = hidden_field :comment, :item_id, :value => @item.id
 
     = label :comment, :comment, 'Add Comment'
-    = text_field{ :style => "width:100%" } :comment, :comment
+    = text_field :comment, :comment, style: "width:100%"
   
     = submit_tag 'Submit'
