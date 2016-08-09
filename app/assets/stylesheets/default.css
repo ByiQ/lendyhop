@@ -6,6 +6,12 @@ html, body {
   font-family: Tahoma, Verdana, sans-serif;
   font-size: 10pt;
 }
+body {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
 div#main {
   margin: 0;
   padding: 0 20px 20px;
@@ -36,14 +42,23 @@ a {
   border: 0.1em solid #A0A0A0;
   margin-bottom: 0.6em;
   display: table;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.3em;
 }
 .listing > .l_left {
   width: 80%;
   display: table-cell;
 }
+.listing > .l_left > div:first-child, .listing > .l_right > div:first-child {
+  margin-bottom: 0.2em
+}
 .listing > .l_right {
-  text-align: right;
   display: table-cell;
+}
+.right {
+  text-align: right;
 }
 #notice #warning {
   background: rosybrown;

@@ -11,5 +11,9 @@
       %div= link_to "#{item.title}", item_path(item)
       %div= item.description
     %div.l_right
-      %div= item.condition
-      %div= item.status
+      %div
+        %div Condition:
+        %div.right= item.condition
+      %div
+        %div Status:
+        %div.right= item.status
