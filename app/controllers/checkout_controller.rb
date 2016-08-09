@@ -21,6 +21,7 @@ class CheckoutsController < ApplicationController
     reserves.each do |reserve|
       totalbintime = totalbintime | reserve.bintime
     end
+    puts totalbintime
     @taken = {}
     @days.reverse.each do |prefix|
       @slots.reverse.each do |suffix|
