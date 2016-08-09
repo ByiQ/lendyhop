@@ -7,8 +7,9 @@
 
 - @items.each do |item|
   %div.listing
-    %p= item.title
-    %p= item.description
-    %p= item.condition
-    %p= item.status
-    %p= link_to "More about #{item.title}", item_path(item)
+    %div.l_left
+      %div= link_to "#{item.title}", item_path(item)
+      %div= item.description
+    %div.l_right
+      %div= item.condition
+      %div= item.status
