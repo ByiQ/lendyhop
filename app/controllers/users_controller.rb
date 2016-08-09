@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create!(user_params)
+    session[:user] = @user
     flash[:notice] = "#{@user.firstname} was successfully created."
     redirect_to items_path
   end
