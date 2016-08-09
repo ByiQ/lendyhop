@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 
   def show
     @comments = Comment.where(["item_id = ?", params[:id]])
-    @tags = Tag.where(["itemd_id = ?", params[:id]])
+    @tags = Tag.where(["item_id = ?", params[:id]])
     id = params[:id] # retrieve movie ID from URI route
     @item = Item.find(id) # look up movie by unique ID
     @item.user = User.find @item[:user_id]
