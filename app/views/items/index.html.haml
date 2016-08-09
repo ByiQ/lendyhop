@@ -5,12 +5,10 @@
     
 %h2 Available Items
 
-%table#items
-  %tbody
-    - @items.each do |item|
-      %tr
-        %td= item.title
-        %td= item.description
-        %td= item.condition
-        %td= item.status
-        %td= link_to "More about #{item.title}", item_path(item)
+- @items.each do |item|
+  %div.listing
+    %p= item.title
+    %p= item.description
+    %p= item.condition
+    %p= item.status
+    %p= link_to "More about #{item.title}", item_path(item)
