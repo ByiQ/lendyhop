@@ -15,7 +15,7 @@
         - else
           %span #{session[:user]["user_name"]}
           %br
-          %span= link_to 'Logout', logout_user_path
+          %span= link_to 'Logout', logout_user_pathgit
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]

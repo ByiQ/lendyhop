@@ -46,22 +46,25 @@ a {
   margin-right: auto;
   padding: 0.3em;
 }
-.l_left, .ind_main {
+.ind_main {
+  width: 80%;
+}
+.l_left {
   width: 80%;
   display: table-cell;
   float: left;
 }
-.l_left > div:first-child, .l_right > div:first-child, .ind_info div {
+.l_left > div:first-child, .l_right > div:first-child {
   margin-bottom: 0.2em
 }
-.listing > .l_right, .ind_item > .ind_info {
+.listing > .l_right {
   display: table-cell;
   float: right;
 }
-.l_right > div, .ind_info_top > div {
+.l_right > div {
   display: table-row;
 }
-.l_right > div > div, .ind_info_top > div > div {
+.l_right > div > div {
   display: table-cell;
   width: 50%;
 }

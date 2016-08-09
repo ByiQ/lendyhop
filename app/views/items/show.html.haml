@@ -1,27 +1,25 @@
 -# in app/views/users/show.html.haml
 
 %h2 #{@item.title} - #{@item.price}
-%table
+%table.ind_item
     %tr
-        %td
-            %p= @item.description
-        %td
+        %td.ind_main
+            %span= @item.description
+        %td.ind_info
             %table
                 %tr
-                    %td
-                        %div Condition:
-                        %div.right= @item.condition
-                    %td
-                        %div Status:
-                        %div.right= @item.status
-                    %td
-                        %div Location:
-                        %div.right= @item.location
+                    %td Condition:
+                    %td.right= @item.condition
                 %tr
-                    %td
-                        %span Tags
-                        %br
-                        %div.tags
+                    %td Status:
+                    %td.right= @item.status
+                %tr
+                    %td Location:
+                    %td.right= @item.location
+                %tr
+                    %span Tags
+                    %br
+                    %div.tags
 
 - if (session[:user] != nil && session[:user]["id"] == @item.user["id"])
     = link_to 'Edit', edit_item_path(@item)
