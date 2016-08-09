@@ -49,16 +49,17 @@ a {
 .listing > .l_left {
   width: 80%;
   display: table-cell;
+  float: left;
 }
 .listing > .l_left > div:first-child, .listing > .l_right > div:first-child {
   margin-bottom: 0.2em
 }
 .listing > .l_right {
   display: table-cell;
+  float: right;
 }
 .listing > .l_right > div {
   display: table-row;
-  float: right;
 }
 .listing > .l_right > div > div {
   display: table-cell;
