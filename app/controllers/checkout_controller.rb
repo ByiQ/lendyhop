@@ -19,7 +19,7 @@ class CheckoutsController < ApplicationController
       end
     end
     @par = checkout_params
-    @par[:bintime] = bintime
+    @par["bintime"] = bintime
     @checkout = Checkout.create!(@par)
     redirect_to item_path(@par[:item_id])
   end
