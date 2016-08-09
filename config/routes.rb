@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   
   resources :checkouts
   resource :checkout do
-    get 'new'#, param: :item
+    get '/new/:id', to: 'checkouts#new', as: 'item'
   end
   
   # Example resource route with options:
