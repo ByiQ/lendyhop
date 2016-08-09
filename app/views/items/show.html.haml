@@ -28,14 +28,17 @@
 - if (session[:user] != nil && session[:user]["id"] == @item.user["id"])
     = link_to 'Edit', edit_item_path(@item)
 
+%br
+%h3 Comments
+
 - @comments.each do |comment|
-    %p= comment.comment
+    %div.item_comment= comment.comment
 
 = form_tag submit_comment_path(@comment), :method => :put do
 
     = hidden_field :comment, :item_id, :value => @item.id
 
     = label :comment, :comment, 'Add Comment'
-    = text_field :comment, :comment
+    = text_field{ :style => "width:100%" } :comment, :comment
   
     = submit_tag 'Submit'

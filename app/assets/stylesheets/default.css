@@ -46,10 +46,12 @@ a {
   float: right;
 }
 .listing, .ind_item {
+  display: table;
+}
+.listing, .ind_item, .item_comment {
   border-radius: 0.3em;
   border: 0.1em solid #A0A0A0;
   margin-bottom: 0.6em;
-  display: table;
   width: 95%;
   margin-left: auto;
   margin-right: auto;
