@@ -12,6 +12,8 @@
       %h4.login
         - if (session[:user] == nil)
           = link_to 'Login', login_user_path
+          %br
+          =link_to 'New user', new_user_path
         - else
           %span #{session[:user]["user_name"]}
           %br
