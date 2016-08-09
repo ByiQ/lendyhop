@@ -24,6 +24,18 @@
             %span Tags
             %br
             %div.tags
+                @tags.each do |tag|
+                    %span.tag
+                        = tag.tag
+                        - if (session[:user] != nil && session[:user]["id"] == @item.user["id"])
+                            = button_to 'X', tag_path(tag), :method => :delete
+                %br
+                - if (session[:user] != nil && session[:user]["id"] == @item.user["id"])
+                        = form_tag submit_comment_path(@comment), :method => :put do
+
+                        = hidden_field :tag, :item_id, :value => @item.id
+                        = text_field :tag, :tag
+                        = submit_tag '+'
 
 - if (session[:user] != nil && session[:user]["id"] == @item.user["id"])
     = link_to 'Edit', edit_item_path(@item)
