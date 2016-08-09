@@ -3,15 +3,38 @@ class CheckoutsController < ApplicationController
   def checkout_params
     params.require(:checkout).permit(:item_id, :user_id, :bintime)
   end
+  
+  def _days
+    return [ 'm', 't', 'w', 'r', 'f', 's', 'u' ]
+  end
+  
+  def _slots
+    return [ 'm', 'a', 'e' ]
+  end
 
   def new
     @item = Item.find(params[:id])
+    reserves = Checkout.where(["item_id = ?", params[:id]])
+    @days = _days
+    @slots = _slots
+    totalbintime = 0b0
+    reserves.each do |reserve|
+      totalbintime |= reserve.bintime
+    end
+    @taken = {}
+    @days.reverse.each do |prefix|
+      @slots.reverse.each do |suffix|
+        @taken[prefix << suffix] = binttime & 1
+        bintime >> 1
+      end
+    end
+    puts taken
   end
 
   def create
     pars = params
-    days = [ 'm', 't', 'w', 'r', 'f', 's', 'u' ]
-    slots = [ 'm', 'a', 'e' ]
+    days = _days
+    slots = _slots
     bintime = 0b0
     days.each do |prefix|
       slots.each do |suffix|
