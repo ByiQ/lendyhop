@@ -39,10 +39,10 @@ a {
 .ind_header {
   width: 100%;
 }
-.ind_header > h2, .ind_header > h5 {
+.ind_header > h2, .ind_header > h4 {
   display: inline-block;
 }
-.ind_header > h5 {
+.ind_header > h4 {
   float: right;
 }
 .listing, .ind_item {
@@ -82,6 +82,7 @@ a {
 }
 .right {
   text-align: right;
+  white-space: nowrap;
 }
 #notice, #warning {
   background: #F0F0C0;
