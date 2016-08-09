@@ -34,6 +34,11 @@ class UsersController < ApplicationController
     # session[:userID] = @user.id
   end
   
+  def logout
+    session[:userID] = nil
+    redirect_to items_path
+  end
+  
   def verify
     name = user_params[:user_name]
     @user = User.where(["user_name = ?", name]).first

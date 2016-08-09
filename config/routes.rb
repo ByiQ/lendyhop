@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :users
   resource :user do
     get 'login'
+    get 'logout'
     get 'verify'#, param: :user_name
   end
   
