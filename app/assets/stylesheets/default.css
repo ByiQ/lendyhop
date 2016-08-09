@@ -36,6 +36,15 @@ a {
   float: right;
   color: #F4F4F4;
 }
+.ind_header {
+  width: 100%;
+}
+.ind_header > h2, .ind_header > h5 {
+  display: inline-block;
+}
+.ind_header > h5 {
+  float: right;
+}
 .listing, .ind_item {
   border-radius: 0.3em;
   border: 0.1em solid #A0A0A0;
@@ -47,7 +56,7 @@ a {
   padding: 0.3em;
 }
 .ind_main {
-  width: 80%;
+  width: 100%;
   vertical-align: top;
 }
 .l_left {

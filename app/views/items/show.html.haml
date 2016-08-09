@@ -1,6 +1,9 @@
 -# in app/views/users/show.html.haml
 
-%h2 #{@item.title} - #{@item.price}
+%div.ind_header
+    %h2 #{@item.title} - $#{@item.price}
+    %h5= link_to 'Back to listings', items_path
+
 %table.ind_item
     %tr
         %td.ind_main
@@ -24,8 +27,6 @@
 
 - if (session[:user] != nil && session[:user]["id"] == @item.user["id"])
     = link_to 'Edit', edit_item_path(@item)
-    
-= link_to 'Back to listings', items_path
 
 - @comments.each do |comment|
     %p= comment.comment
