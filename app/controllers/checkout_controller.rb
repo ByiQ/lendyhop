@@ -4,14 +4,8 @@ class CheckoutsController < ApplicationController
     params.require(:checkout).permit(:item_id, :user_id, :bintime)
   end
 
-  def new
-  end
-  
-  def submit
+  def create
     puts params
-  end
-  
-  def destroy
   end
 
 end
