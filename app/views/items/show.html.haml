@@ -16,10 +16,11 @@
                 %tr
                     %td Location:
                     %td.right= @item.location
-                %tr
-                    %span Tags
-                    %br
-                    %div.tags
+    %tr
+        %td{ :colspan => "2" }
+            %span Tags
+            %br
+            %div.tags
 
 - if (session[:user] != nil && session[:user]["id"] == @item.user["id"])
     = link_to 'Edit', edit_item_path(@item)

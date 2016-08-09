@@ -48,6 +48,7 @@ a {
 }
 .ind_main {
   width: 80%;
+  vertical-align: top;
 }
 .l_left {
   width: 80%;
