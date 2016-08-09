@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   end
   
   def logout
-    session.data.delete(:userID)
+    reset_session
     redirect_to items_path
   end
   
