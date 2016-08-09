@@ -117,3 +117,22 @@ form label {
   font-weight: 600;
   padding-right: 0em;
 }
+
+table#checkout {
+  
+}
+table#checkout td {
+  width: 7em;
+  text-align: center;
+  border: solid 1px;
+  border-left: #808080;
+  border-right: #808080;
+  border-top: #A0A0A0;
+  border-bottom: #A0A0A0;
+}
+table#checkout thead {
+  border-bottom: solid 1px #404040;
+}
+table#checkout tr:first-child {
+  border-right: solid 1px #404040;
+}
