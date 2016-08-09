@@ -34,6 +34,10 @@ Rails.application.routes.draw do
     put 'destroy'
   end
   
+  resources :checkouts
+  resource :checkout do
+  end
+  
   # Example resource route with options:
   #   resources :products do
   #     member do
