@@ -8,16 +8,10 @@ class CheckoutsController < ApplicationController
   end
   
   def submit
-    @par = tag_params
-    @tag = Tag.create!(@par)
-    redirect_to item_path(@par[:item_id])
+    puts params
   end
   
   def destroy
-    @tag = Tag.find(params[:id])
-    id = @tag[:item_id]
-    @tag.destroy
-    redirect_to item_path(id)
   end
 
 end
