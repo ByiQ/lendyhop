@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class TagsController < ApplicationController
 
   def tag_params
     params.require(:item).permit(:item_id, :tag)
