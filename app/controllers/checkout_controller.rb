@@ -12,13 +12,13 @@ class CheckoutsController < ApplicationController
     pars = params
     days = [ 'm', 't', 'w', 'r', 'f', 's', 'u' ]
     slots = [ 'm', 'a', 'e' ]
-    bintime = 0b0
+    @bintime = 0b0
     days.each do |prefix|
       slots.each do |suffix|
         bintime = (bintime | (pars[prefix << suffix].to_i & 1)) << 1
       end
     end
-    @par = { :item_id => pars[:item_id], :user_id => pars[:user_id], :bintime => bintime }
+    @par = { :item_id => pars[:item_id], :user_id => pars[:user_id], :bintime => @bintime }
     @checkout = Checkout.create!(@par)
     redirect_to item_path(@par[:item_id])
   end

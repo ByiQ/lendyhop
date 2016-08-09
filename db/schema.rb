@@ -16,15 +16,15 @@ ActiveRecord::Schema.define(version: 20160725200651) do
   create_table "availabilities", force: :cascade do |t|
     t.integer "item_id",     null: false
     t.string  "cron_string", null: false
+    t.integer "bintime",     null: false
   end
 
   add_index "availabilities", ["item_id"], name: "index_availabilities_on_item_id"
 
   create_table "checkouts", force: :cascade do |t|
-    t.integer "item_id",           null: false
-    t.integer "user_id",           null: false
-    t.string  "checkout_time_out", null: false
-    t.string  "checkout_time_in",  null: false
+    t.integer "item_id", null: false
+    t.integer "user_id", null: false
+    t.integer "bintime", null: false
   end
 
   add_index "checkouts", ["item_id"], name: "index_checkouts_on_item_id"
