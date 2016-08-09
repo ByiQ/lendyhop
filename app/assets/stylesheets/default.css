@@ -100,7 +100,7 @@ form label {
 .tag {
   border: solid 1px #C0C0FF;
   display: inline-block;
-  padding: 0em 0em 0em 0.4em;
+  padding: 0em 0.4em;
   border-radius: 0.3em;
   background: #DAF4FF;
   margin: 0.15em;
@@ -115,4 +115,5 @@ form label {
   border-left: solid 1px #C0C0FF;
   cursor: pointer;
   font-weight: 600;
+  padding-right: 0em;
 }
