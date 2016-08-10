@@ -69,7 +69,7 @@ class ItemsController < ApplicationController
     search_tabs = [ [ Tag, "tag", :item_id ], [ Item, "title", :title ] ]
     search_tabs.each do |tab|
       @terms.each do |term|
-        result = (tab[0]).where("? LIKE ?", tab[1], term)
+          result = (tab[0]).where(tab[1] + " LIKE ?", term)
         if (!result.nil?)
           result.each do |tag|
             if (@results[tag[tab[2]]].nil?)
