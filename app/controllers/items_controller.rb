@@ -69,7 +69,7 @@ class ItemsController < ApplicationController
     search_tabs = [ [ Tag, "tag", :item_id ], [ Item, "title", :title ] ]
     search_tabs.each do |tab|
       @terms.each do |term|
-          result = (tab[0]).where(tab[1] + " LIKE ?", term)
+        result = (tab[0]).where(tab[1] + " LIKE ?", "%" + term + "%")
         if (!result.nil?)
           result.each do |tag|
             if (@results[tag[tab[2]]].nil?)
@@ -83,12 +83,23 @@ class ItemsController < ApplicationController
     end
     
     @results.sort_by{|k, v| v}.reverse
+    @items = []
+    
+    @results.each do |id, count|
+      @items.push(Item.find(id))
+      @items[-1][:scount] = count
+    end
     
     puts @results
     puts @results
     puts @results
     puts @results
     puts @results
+    puts @items
+    puts @items
+    puts @items
+    puts @items
+    puts @items
   end
 
   private
