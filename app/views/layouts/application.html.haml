@@ -20,7 +20,7 @@
           %span= link_to 'Logout', logout_user_path
           
     %div#search
-      = form_tag search_item_path(@terms) do
+      = form_tag search_item_path(:terms) do
       
         = label :terms, :terms, 'Terms'
         = text_field :terms, :terms
