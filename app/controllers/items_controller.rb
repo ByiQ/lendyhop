@@ -62,6 +62,15 @@ class ItemsController < ApplicationController
     flash[:notice] = "Item '#{@item.title}' deleted."
     redirect_to items_path
   end
+  
+  def search
+    @terms = params[:terms].split(/\s\,/)
+    puts @terms
+    puts @terms
+    puts @terms
+    puts @terms
+    puts @terms
+  end
 
   private
   
