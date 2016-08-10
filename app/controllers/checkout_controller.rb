@@ -47,5 +47,13 @@ class CheckoutsController < ApplicationController
     @checkout = Checkout.create!(@par)
     redirect_to item_path(@par[:item_id])
   end
+  
+  def destroy
+    @all_rel = Checkout.where(["item_id = ? AND user_id = ?", params[:item_id], session[:user]["id"]])
+    @all_rel.each do |checkout|
+      checkout.destroy
+    end
+    redirect_to item_path(params[:item_id])
+  end
 
 end

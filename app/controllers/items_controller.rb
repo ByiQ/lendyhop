@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
     id = params[:id] # retrieve movie ID from URI route
     @item = Item.find(id) # look up movie by unique ID
     @item.user = User.find @item[:user_id]
+    @checked_out = Checkout.where("item_id = ?", session[:user]["id"]).nil?
     # will render app/views/movies/show.<extension> by default
   end
 
