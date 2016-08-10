@@ -69,8 +69,11 @@ class ItemsController < ApplicationController
     @terms.each do |term|
       result = Tag.where("tag LIKE ?", term)
       if (!result.nil?)
-        @results[result[:item_id]] = @results[result[:item_id]] || 1
-        @results[result[:item_id]] += 1
+        if (@results[result[:item_id]].nil?)
+          @results[result[:item_id]] = 1
+        else
+          @results[result[:item_id]] += 1
+        end
       end
     end
     puts @results
