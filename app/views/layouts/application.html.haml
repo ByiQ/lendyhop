@@ -22,7 +22,7 @@
     %div#search
       = form_tag search_item_path, :method => :put do
       
-        = label :terms, :terms 'Terms'
+        = label :terms, :terms, 'Terms'
         = text_field :terms, :terms
 
         = submit_tag 'Search'
