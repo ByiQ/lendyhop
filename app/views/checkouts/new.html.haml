@@ -21,7 +21,7 @@
                 %td Morning
                 - @days.each do |prefix|
                     %td
-                        - if (@taken[prefix + "m"])
+                        - if (@taken[prefix + "m"] == 1)
                             X
                         - else
                             = check_box_tag (prefix + "m")
