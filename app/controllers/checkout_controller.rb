@@ -49,7 +49,7 @@ class CheckoutsController < ApplicationController
   end
   
   def destroy
-    @all_rel = Checkout.where(["item_id = ? AND user_id = ?", params[:item_id], session[:user]["id"]])
+    @all_rel = Checkout.where(["item_id = ? AND user_id = ?", params[:id], session[:user]["id"]])
     @all_rel.each do |checkout|
       checkout.destroy
     end

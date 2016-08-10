@@ -40,7 +40,7 @@
             - if (@checked_out)
                 = link_to 'Check Out', item_checkout_path(@item)
             - else
-                = link_to 'Check In', tag_path(@item), :method => :delete
+                = link_to 'Check In', checkout_path(@item), :method => :delete
 
 - if (session[:user] != nil && session[:user]["id"] == @item.user["id"])
     = link_to 'Edit', edit_item_path(@item)
