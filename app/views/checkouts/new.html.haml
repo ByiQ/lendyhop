@@ -19,13 +19,12 @@
         %tbody
             %tr
                 %td Morning
-                %td= check_box_tag :mm
-                %td= check_box_tag :tm
-                %td= check_box_tag :wm
-                %td= check_box_tag :rm
-                %td= check_box_tag :fm
-                %td= check_box_tag :sm
-                %td= check_box_tag :um
+                - @days.each do |prefix|
+                    %td
+                        - if (@taken[prefix + "m"])
+                            X
+                        - else
+                            = check_box_tag (prefix + "m")
             %tr
                 %td Afternoon
                 %td= check_box_tag :ma

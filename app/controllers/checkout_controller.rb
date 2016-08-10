@@ -30,9 +30,6 @@ class CheckoutsController < ApplicationController
         totalbintime = totalbintime >> 1
       end
     end
-    puts
-    puts @taken
-    puts @taken
   end
 
   def create
