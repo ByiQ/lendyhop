@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
     id = params[:id] # retrieve movie ID from URI route
     @item = Item.find(id) # look up movie by unique ID
     @item.user = User.find @item[:user_id]
-    reserves = Checkout.where("item_id = ?", session[:user]["id"])
+    reserves = Checkout.where("item_id = ? AND user_id = ?", params[:id], session[:user]["id"])
     @checked_out = false
     reserves.each do |reserve|
       @checked_out = true
