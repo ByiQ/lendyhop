@@ -64,7 +64,7 @@ class ItemsController < ApplicationController
   end
   
   def search
-    @terms = params[:terms].split(" ")
+    @terms = params[:terms]["terms"].split(" ")
     @results = {}
     @terms.each do |term|
       result = Tag.where("tag LIKE ?", term)
