@@ -11,7 +11,11 @@ class ItemsController < ApplicationController
     @item = Item.find(id) # look up movie by unique ID
     @item.user = User.find @item[:user_id]
     reserves = Checkout.where("item_id = ? AND user_id = ?", params[:id], session[:user]["id"])
-    @checked_out = reserves.nil?
+    @checked_out = 0
+    reserves.each do |reserve|
+      @checked_out += 1
+    end
+    puts @checked_out
     # will render app/views/movies/show.<extension> by default
   end
 
