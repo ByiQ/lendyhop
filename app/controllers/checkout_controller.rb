@@ -53,7 +53,7 @@ class CheckoutsController < ApplicationController
     @all_rel.each do |checkout|
       checkout.destroy
     end
-    redirect_to item_path(params[:item_id])
+    redirect_to item_path(params[:id])
   end
 
 end
