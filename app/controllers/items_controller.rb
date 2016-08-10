@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def item_params
-    params.require(:item).permit(:user_id, :title, :description, :price, :location, :condition, :status)
+    params.require(:item).permit(:user_id, :title, :description, :price, :location, :condition, :status, :scount)
   end
 
   def show
