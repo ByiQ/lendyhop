@@ -25,12 +25,11 @@ class CheckoutsController < ApplicationController
     @taken = {}
     @days.reverse.each do |prefix|
       @slots.reverse.each do |suffix|
-        puts totalbintime
-        puts (totalbintime & 1)
         @taken[prefix + suffix] = (totalbintime & 1)
-        totalbintime = totalbintime >> 1
       end
     end
+    puts
+    puts @taken
     puts @taken
   end
 
