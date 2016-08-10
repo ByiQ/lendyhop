@@ -35,12 +35,13 @@
                         = hidden_field :tag, :item_id, :value => @item.id
                         = text_field :tag, :tag
                         = submit_tag '+'
-    %tr
-        %td{ :colspan => "2" }
-            - if (@checked_out < 1)
-                = link_to 'Check Out', item_checkout_path(@item)
-            - else
-                = link_to 'Check In', checkout_path(@item), :method => :delete
+    - if (session[:user] != nil)
+        %tr
+            %td{ :colspan => "2" }
+                - if (@checked_out < 1)
+                    = link_to 'Check Out', item_checkout_path(@item)
+                - else
+                    = link_to 'Check In', checkout_path(@item), :method => :delete
 
 - if (session[:user] != nil && session[:user]["id"] == @item.user["id"])
     = link_to 'Edit', edit_item_path(@item)
