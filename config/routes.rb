@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   
   resources :items
   resource :item do
-    put '/search/:terms', to: 'items#search', as: 'search'
+    put '/search', to: 'items#search', as: 'search'
   end
   
   resources :comments
