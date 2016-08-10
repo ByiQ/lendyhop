@@ -1,4 +1,3 @@
 class Item < ActiveRecord::Base
-    attr_accessor :user
-    attr_accessor :scount
+    attr_accessor :user, :scount
 end
