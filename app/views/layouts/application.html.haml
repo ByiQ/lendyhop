@@ -18,10 +18,19 @@
           %span #{session[:user]["user_name"]}
           %br
           %span= link_to 'Logout', logout_user_path
+          
+    %div#search
+      = form_tag search_item_path do
+      
+        = label :item, :title, 'Terms'
+        = text_field :item, :title
+
+        = submit_tag 'Search
+        
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
       - elsif flash[:warning]
-        #warning.message= flash[:warning]
+        #warning.message= flash[:warning]'
 
       = yield
