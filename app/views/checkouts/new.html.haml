@@ -27,22 +27,20 @@
                             = check_box_tag (prefix + "m")
             %tr
                 %td Afternoon
-                %td= check_box_tag :ma
-                %td= check_box_tag :ta
-                %td= check_box_tag :wa
-                %td= check_box_tag :ra
-                %td= check_box_tag :fa
-                %td= check_box_tag :sa
-                %td= check_box_tag :ua
+                - @days.each do |prefix|
+                    %td
+                        - if (@taken[prefix + "a"] == 1)
+                            X
+                        - else
+                            = check_box_tag (prefix + "a")
             %tr
                 %td Evening
-                %td= check_box_tag :me
-                %td= check_box_tag :te
-                %td= check_box_tag :we
-                %td= check_box_tag :re
-                %td= check_box_tag :fe
-                %td= check_box_tag :se
-                %td= check_box_tag :ue
+                - @days.each do |prefix|
+                    %td
+                        - if (@taken[prefix + "e"] == 1)
+                            X
+                        - else
+                            = check_box_tag (prefix + "e")
   
     = submit_tag 'Checkout'
     = button_to 'Back', item_path(@item)
