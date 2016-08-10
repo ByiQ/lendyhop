@@ -64,7 +64,7 @@ class ItemsController < ApplicationController
   end
   
   def search
-    @terms = params[:terms].split(/\s\,/)
+    @terms = params[:terms]["terms"].split(/\s\,/)
     puts params[:terms]
     puts params[:terms]
     puts params[:terms]
