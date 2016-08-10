@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def item_params
-    params.require(:item).permit(:user_id, :title, :description, :price, :location, :condition, :status, :scount)
+    params.require(:item).permit(:user_id, :title, :description, :price, :location, :condition, :status)
   end
 
   def show
@@ -87,7 +87,7 @@ class ItemsController < ApplicationController
     
     @results.each do |id, count|
       @items.push(Item.find(id))
-      @items[-1][:scount] = count
+      @items[-1]["scount"] = count
     end
     
     puts @results
