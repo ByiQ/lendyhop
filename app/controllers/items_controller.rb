@@ -64,10 +64,20 @@ class ItemsController < ApplicationController
   end
   
   def search
-    @terms = params[:terms]["terms"].split(" ")
+    @terms = params[:terms].split(" ")
+    @results = {}
     @terms.each do |term|
-      puts term
+      result = Tag.where("tag LIKE ?", term)
+      if (!result.nil?)
+        @results[result[:item_id]] = @results[result[:item_id]] || 1
+        @results[result[:item_id]] += 1
+      end
     end
+    puts @results
+    puts @results
+    puts @results
+    puts @results
+    puts @results
   end
 
   private
