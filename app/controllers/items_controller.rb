@@ -66,14 +66,17 @@ class ItemsController < ApplicationController
   def search
     @terms = params[:terms]["terms"].split(" ")
     @results = { }
-    @terms.each do |term|
-      result = Tag.where("tag LIKE ?", term)
-      if (!result.nil?)
-        result.each do |tag|
-          if (@results[tag[:item_id]].nil?)
-            @results[tag[:item_id]] = 1
-          else
-            @results[tag[:item_id]] += 1
+    search_tabs = [ [ Tag, "tag", :item_id ], [ Item, "title", :title ] ]
+    search_tabs.each do |tab|
+      @terms.each do |term|
+        result = (tab[0]).where("? LIKE ?", tab[1], term)
+        if (!result.nil?)
+          result.each do |tag|
+            if (@results[tag[tab[2]]].nil?)
+              @results[tag[tab[2]]] = 1
+            else
+              @results[tag[tab[2]]] += 1
+            end
           end
         end
       end
