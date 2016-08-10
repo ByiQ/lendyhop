@@ -64,8 +64,7 @@ class ItemsController < ApplicationController
   end
   
   def search
-    @terms = params[:terms]["terms"].split(/\s\,/)
-    puts '\n'
+    @terms = params[:terms]["terms"].split(/ ,/)
     @terms.each do |term|
       puts term
     end
