@@ -91,12 +91,11 @@ class ItemsController < ApplicationController
     end
     
     @pars = params[:terms]["terms"]
-    puts @pars
     @terms = Object.new
 
-    def @terms.terms
-      return "" + @pars
-    end
+    eval("def @terms.terms
+      return " + @pars + "
+    end");
   end
 
   private
