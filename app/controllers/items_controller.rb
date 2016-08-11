@@ -87,7 +87,7 @@ class ItemsController < ApplicationController
     
     @results.each do |id, count|
       @items.push(Item.find(id))
-      @items[-1]["scount"] = count
+      @items[-1].attributes[:scount] = count
     end
     
     puts @results
