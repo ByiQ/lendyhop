@@ -90,8 +90,7 @@ class ItemsController < ApplicationController
       @items[-1].attributes[:scount] = count
     end
     
-    @terms = params[:terms]
-    @terms.attributes[:terms] = @terms["terms"]
+    @terms = { :terms => params[:terms]["terms"] }
   end
 
   private
