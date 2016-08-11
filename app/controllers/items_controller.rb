@@ -89,17 +89,6 @@ class ItemsController < ApplicationController
       @items.push(Item.find(id))
       @items[-1].attributes[:scount] = count
     end
-    
-    puts @results
-    puts @results
-    puts @results
-    puts @results
-    puts @results
-    puts @items
-    puts @items
-    puts @items
-    puts @items
-    puts @items
   end
 
   private
