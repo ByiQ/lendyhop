@@ -90,7 +90,7 @@ class ItemsController < ApplicationController
       @items[-1].attributes[:scount] = count
     end
     
-    @pars = params["terms"]["terms"]
+    @pars = params[:terms]["terms"]
     puts @pars
     @terms = Object.new
 
