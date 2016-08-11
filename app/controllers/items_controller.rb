@@ -91,6 +91,7 @@ class ItemsController < ApplicationController
     end
     
     @terms = params[:terms]
+    @terms.attributes[:terms] = @terms["terms"]
   end
 
   private
