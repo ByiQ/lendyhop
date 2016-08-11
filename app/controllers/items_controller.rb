@@ -94,7 +94,7 @@ class ItemsController < ApplicationController
     @terms = Object.new
 
     @terms.define_singleton_method(:terms) do
-      return @pars
+      return "SIGTERM"
     end
   end
 
