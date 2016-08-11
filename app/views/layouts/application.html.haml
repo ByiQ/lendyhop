@@ -21,7 +21,7 @@
       %div#search
         = form_tag search_item_path, :method => :put do
 
-          = text_field{ placeholder: "Enter Search Terms" } :terms, :terms
+          = text_field :terms, :terms, placeholder: "Enter Search Terms"
 
           = submit_tag 'Search'
         
