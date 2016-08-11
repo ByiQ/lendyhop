@@ -64,12 +64,12 @@ class ItemsController < ApplicationController
   end
   
   def search
-    terms = params[:terms]["terms"].split(" ")
+    terms = params[:terms]["terms"].downcase.split(" ")
     @results = { }
     search_tabs = [ [ Tag, "tag", :item_id ], [ Item, "title", :id ] ]
     search_tabs.each do |tab|
       terms.each do |term|
-        result = (tab[0]).where(tab[1] + " LIKE ?", "%" + term + "%")
+        result = (tab[0]).where("LOWER ( " + tab[1] + " ) LIKE ?", "%" + term + "%")
         if (!result.nil?)
           result.each do |tag|
             if (@results[tag[tab[2]]].nil?)
