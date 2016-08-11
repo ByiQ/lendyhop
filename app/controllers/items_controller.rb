@@ -94,7 +94,7 @@ class ItemsController < ApplicationController
     @terms = Object.new
 
     eval("def @terms.terms
-      return " + @pars + "
+      return '" + @pars + "'
     end");
   end
 
