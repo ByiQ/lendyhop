@@ -64,11 +64,11 @@ class ItemsController < ApplicationController
   end
   
   def search
-    @terms = params[:terms]["terms"].split(" ")
+    terms = params[:terms]["terms"].split(" ")
     @results = { }
     search_tabs = [ [ Tag, "tag", :item_id ], [ Item, "title", :title ] ]
     search_tabs.each do |tab|
-      @terms.each do |term|
+      terms.each do |term|
         result = (tab[0]).where(tab[1] + " LIKE ?", "%" + term + "%")
         if (!result.nil?)
           result.each do |tag|
@@ -89,9 +89,6 @@ class ItemsController < ApplicationController
       @items.push(Item.find(id))
       @items[-1].attributes[:scount] = count
     end
-    
-    @terms = {}
-    @terms.terms = params[:terms]["terms"]
   end
 
   private
