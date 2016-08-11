@@ -89,6 +89,8 @@ class ItemsController < ApplicationController
       @items.push(Item.find(id))
       @items[-1].attributes[:scount] = count
     end
+    
+    @terms[terms] = params[:terms]["terms"]
   end
 
   private
