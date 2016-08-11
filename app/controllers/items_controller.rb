@@ -90,11 +90,11 @@ class ItemsController < ApplicationController
       @items[-1].attributes[:scount] = count
     end
     
-    @pars = { :terms => { :terms => params[:terms]["terms"] } }
+    @pars = params[:terms]["terms"]["terms"]
     @terms = Object.new
 
     @terms.define_singleton_method(:terms) do
-      return "SIGTERM"
+      return @pars
     end
   end
 
