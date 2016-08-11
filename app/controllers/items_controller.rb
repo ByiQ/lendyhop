@@ -95,7 +95,7 @@ class ItemsController < ApplicationController
     @terms = Object.new
 
     @terms.define_singleton_method(:terms) do
-      @pars
+      return "" + @pars
     end
   end
 
