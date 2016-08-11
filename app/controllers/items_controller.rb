@@ -90,7 +90,7 @@ class ItemsController < ApplicationController
       @items[-1].attributes[:scount] = count
     end
     
-    @pars = params[:terms]
+    @pars = params
     @terms = Object.new
 
     @terms.define_singleton_method(:terms) do
