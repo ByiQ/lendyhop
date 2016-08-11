@@ -142,3 +142,7 @@ table#checkout thead {
 table#checkout tr:first-child {
   border-right: solid 1px #404040;
 }
+div#search {
+  margin-top: -1.5em;
+  margin-left: auto;
+}

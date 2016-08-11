@@ -18,14 +18,12 @@
           %span #{session[:user]["user_name"]}
           %br
           %span= link_to 'Logout', logout_user_path
-      %h4
-        %div#search
-          = form_tag search_item_path, :method => :put do
-      
-            = label :terms, :terms, 'Terms'
-            = text_field :terms, :terms
+      %div#search
+        = form_tag search_item_path, :method => :put do
 
-            = submit_tag 'Search'
+          = text_field{ :placeholder => "Enter Search Terms" } :terms, :terms
+
+          = submit_tag 'Search'
         
     #main
       - if flash[:notice]
