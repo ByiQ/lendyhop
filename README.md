@@ -8,7 +8,7 @@ This app is currently (2016/08/11) deployed at https://lit-bastion-28013.herokua
 
 #Changes
 
-##2016/08/11
+###2016/08/11
 
 * Added basic validations for
  * User creation
@@ -18,67 +18,39 @@ This app is currently (2016/08/11) deployed at https://lit-bastion-28013.herokua
 * Bug fixes
  * Hitting 'Back' when on the checkout screen would check the item out
 
-##2016/08/10
+###2016/08/10
+* Add search
 
--Add search
-    
-    
-2016/08/09
+###2016/08/09
+* New features
+ * Added tags
+ * Added checkout
+* Bug fixes
+ * Not being logged in caused unexpected behvaiours
+       
+###2016/08/08
+* Tweaks
+ * Updated CSS
+ * Users can logout
+ * Comments require users to be logged in
 
--New features
+###2016/08/03
+* New features
+ * Added items
+* Tweaks
+ * Merged POChop branch into master
 
---Added tags
+###2016/07/29
+* Tweaks
+ * Users can login
 
---Added checkout
+###2016/07/25
+* Work
+ * User creation
 
--Bug fixes
-    
---Not being logged in caused unexpected behvaiours
-        
-        
-2016/08/08
-
--Tweaks
-    
---Updated CSS
-
---Users can logout
-
---Comments require users to be logged in
-        
-        
-2016/08/03
-
--New features
-    
---Added items
-        
--Tweaks
-    
---Merged POChop branch into master
-        
-
-2016/07/29
-
--Tweaks
-    
---Users can login
-        
-
-2016/07/25
-
--Work
-    
---User creation
-        
-
-2016/07/22
-
--Work
-    
---User creation
-        
--Tweaks
-    
---Created POChop branch for developing
+###2016/07/22
+* Work
+ * User creation
+* Tweaks
+ * Created POChop branch for developing
         
