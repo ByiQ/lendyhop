@@ -10,16 +10,15 @@ This app is currently (2016/08/11) deployed at https://lit-bastion-28013.herokua
 
 ##2016/08/11
 
-*Added basic validations for
- *User creation
- *Item creation
- *Tag creation
- *Checkout
-*Bug fixes
- *Hitting 'Back' when on the checkout screen would check the item out
-        
-        
-2016/08/10
+* Added basic validations for
+ * User creation
+ * Item creation
+ * Tag creation
+ * Checkout
+* Bug fixes
+ * Hitting 'Back' when on the checkout screen would check the item out
+
+##2016/08/10
 
 -Add search
     
