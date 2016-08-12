@@ -19,10 +19,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(user_params)
-    session[:user] = @user
-    flash[:notice] = "#{@user.firstname} was successfully created."
-    redirect_to items_path
+    @par = user_params
+    if @par.has_value?('')
+      flash[:notice] = "User " + (@par[:username].nil? ? "Unknown" : @par[:title]) + " failed"
+      redirect_to new_user_path
+    else
+      @user = User.create!(user_params)
+      session[:user] = @user
+      flash[:notice] = "#{@user.firstname} was successfully created."
+      redirect_to items_path
+    end
   end
 
   def edit

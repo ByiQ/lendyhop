@@ -9,7 +9,11 @@ class TagsController < ApplicationController
   
   def submit
     @par = tag_params
-    @tag = Tag.create!(@par)
+    if @par.has_value?('')
+      flash[:notice] = "Tags cannot be empty"
+    else
+      @tag = Tag.create!(@par)
+    end
     redirect_to item_path(@par[:item_id])
   end
   
