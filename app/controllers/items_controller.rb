@@ -42,6 +42,10 @@ class ItemsController < ApplicationController
     @par[:user_id] = session[:user]['id']
     basicValid = true
     @par.each do |param|
+      puts param
+      puts param
+      puts param
+      puts param
       if (param.nil? || @par[param].nil? || @par[param] == "")
         basicValid = false
         break
