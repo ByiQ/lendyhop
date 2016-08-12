@@ -3,9 +3,13 @@ class ItemsController < ApplicationController
   def nnull_params
     return [ :user_id, :title, :description, :price, :location, :condition, :status ]
   end
+  
+  def null_params
+    return []
+  end
 
   def item_params
-    params.require(:item).permit(nnull_params)
+    params.require(:item).permit(nnull_params.join(null_params))
   end
 
   def show
@@ -44,18 +48,7 @@ class ItemsController < ApplicationController
   def create
     @par = item_params
     @par[:user_id] = session[:user]['id']
-    basicValid = true
-    @par.each do |param|
-      puts param
-      puts param
-      puts param
-      puts param
-      if (param.nil? || @par[param].nil? || @par[param] == "")
-        basicValid = false
-        break
-      end
-    end
-    if !basicValid
+    if @par.has_value?('')
       flash[:notice] = (@par[:title].nil? ? "Unknown" : @par[:title]) + " item failed"
       redirect_to new_item_path
     else
