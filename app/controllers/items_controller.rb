@@ -42,12 +42,13 @@ class ItemsController < ApplicationController
     @par[:user_id] = session[:user]['id']
     basicValid = true
     @par.each do |param|
+      puts param
       if (param.nil? || param == "")
-        basicValid = false
+        # basicValid = false
         break
       end
     end
-    if !basicValid
+    if basicValid
       flash[:notice] = (@par[:title].nil? ? "Unknown" : @par[:title]) + " item failed"
       redirect_to new_item_path
     else
