@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
         break
       end
     end
-    if basicValid
+    if !basicValid
       flash[:notice] = (@par[:title].nil? ? "Unknown" : @par[:title]) + " item failed"
       redirect_to new_item_path
     else
