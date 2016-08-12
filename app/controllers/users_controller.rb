@@ -43,9 +43,14 @@ class UsersController < ApplicationController
   def verify
     name = user_params[:user_name]
     @user = User.where(["user_name = ?", name]).first
-    session[:user] = @user
-    session[:username] = @user.user_name;
-    redirect_to items_path
+    if (@user.nil?)
+      session[:user] = @user
+      session[:username] = @user.user_name;
+      redirect_to items_path
+    else
+      flash[:notice] = "Username " + name + " not recognized"
+      redirect_to login_user_path
+    end
     #redirect_to user_path(@user.id)
   end
 
