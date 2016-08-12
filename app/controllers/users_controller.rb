@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def create
     @par = user_params
     if @par.has_value?('')
-      flash[:notice] = "User " + (@par[:username].nil? ? "Unknown" : @par[:title]) + " failed"
+      flash[:notice] = "User " + (@par[:user_name].nil? ? "Unknown" : @par[:title]) + " failed"
       redirect_to new_user_path
     else
       @user = User.create!(user_params)
