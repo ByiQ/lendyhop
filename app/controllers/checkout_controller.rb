@@ -42,9 +42,14 @@ class CheckoutsController < ApplicationController
         bintime = (bintime | (pars[prefix + suffix].to_i & 1)) << 1
       end
     end
-    @par = checkout_params
-    @par[:bintime] = bintime
-    @checkout = Checkout.create!(@par)
+    if (bintime > 0)
+      @par = checkout_params
+      @par[:bintime] = bintime
+      @checkout = Checkout.create!(@par)
+      flash[:notice] = "Item successfully checked out"
+    else
+      flash[:notice] = "No valid checkout times entered"
+    end
     redirect_to item_path(@par[:item_id])
   end
   
