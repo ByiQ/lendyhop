@@ -40,13 +40,20 @@ class ItemsController < ApplicationController
   def create
     @par = item_params
     @par[:user_id] = session[:user]['id']
-    @item = Item.create!(@par)
-    if (!@item.nil?)
-      flash[:notice] = "#{@item.title} was successfully created."
-      redirect_to items_path
-    else
+    basicValid = true
+    @par.each do |param|
+      if param.nil?
+        basicValid = false
+        break
+      end
+    end
+    if !basicValid
       flash[:notice] = (@par[:title].nil? ? "Unknown" : @par[:title]) + " item failed"
       redirect_to new_item_path
+    else
+      @item = Item.create!(@par)
+      flash[:notice] = "#{@item.title} was successfully created."
+      redirect_to items_path
     end
   end
 
