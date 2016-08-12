@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(nnull_params.join(null_params))
+    params.require(:item).permit(nnull_params.concat(null_params))
   end
 
   def show
