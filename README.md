@@ -33,8 +33,11 @@ This app is currently (2016/08/11) deployed at https://lit-bastion-28013.herokua
 2016/08/09
 
 -New features
+
 --Added tags
+
 --Added checkout
+
 -Bug fixes
     
 --Not being logged in caused unexpected behvaiours
