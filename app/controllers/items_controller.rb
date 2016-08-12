@@ -1,7 +1,11 @@
 class ItemsController < ApplicationController
 
+  def nnull_params
+    return [ :user_id, :title, :description, :price, :location, :condition, :status ]
+  end
+
   def item_params
-    params.require(:item).permit(:user_id, :title, :description, :price, :location, :condition, :status)
+    params.require(:item).permit(nnull_params)
   end
 
   def show
