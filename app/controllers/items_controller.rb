@@ -41,8 +41,13 @@ class ItemsController < ApplicationController
     @par = item_params
     @par[:user_id] = session[:user]['id']
     @item = Item.create!(@par)
-    flash[:notice] = "#{@item.title} was successfully created."
-    redirect_to items_path
+    if (!@item.nil?)
+      flash[:notice] = "#{@item.title} was successfully created."
+      redirect_to items_path
+    else
+      flash[:notice] = (@par[:title].nil? ? "Unknown" : @par[:title]) + " item failed"
+      redirect_to new_item_path
+    end
   end
 
   def edit
