@@ -8,13 +8,21 @@ This app is currently (2016/08/11) deployed at https://lit-bastion-28013.herokua
 
 #Changes
 
+###2016/08/12
+
+* Tweaks
+ * Added new Cucumber tests
+ * Debugged old Cucumber tests
+ * Updated schema to allow 10 digit phone numbers
+
 ###2016/08/11
 
-* Added basic validations for
- * User creation
- * Item creation
- * Tag creation
- * Checkout
+* New Features
+ * Added basic validations for
+  * User creation
+  * Item creation
+  * Tag creation
+  * Checkout
 * Bug fixes
  * Hitting 'Back' when on the checkout screen would check the item out
 
