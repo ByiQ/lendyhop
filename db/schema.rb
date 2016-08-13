@@ -59,11 +59,11 @@ ActiveRecord::Schema.define(version: 20160725200651) do
   add_index "tags", ["item_id"], name: "index_tags_on_item_id"
 
   create_table "users", force: :cascade do |t|
-    t.string  "firstname", null: false
-    t.string  "lastname",  null: false
-    t.string  "user_name", null: false
-    t.string  "address",   null: false
-    t.integer "phone",     null: false
+    t.string  "firstname",           null: false
+    t.string  "lastname",            null: false
+    t.string  "user_name",           null: false
+    t.string  "address",             null: false
+    t.integer "phone",     limit: 8, null: false
   end
 
 end

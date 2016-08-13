@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :lastname,  null: false
       t.string :user_name, null: false
       t.string :address,   null: false
-      t.integer :phone,    null: false
+      t.integer :phone,    null: false, limit: 8
     end
     
     create_table :items do |t|

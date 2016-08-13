@@ -23,6 +23,16 @@ require 'uri'
 require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "selectors"))
+require File.expand_path(File.dirname(__FILE__) + "/../../app/controllers/checkout_controller")
+require File.expand_path(File.dirname(__FILE__) + "/../../app/controllers/comment_controller")
+require File.expand_path(File.dirname(__FILE__) + "/../../app/controllers/items_controller")
+require File.expand_path(File.dirname(__FILE__) + "/../../app/controllers/tag_controller")
+require File.expand_path(File.dirname(__FILE__) + "/../../app/controllers/users_controller")
+require File.expand_path(File.dirname(__FILE__) + "/../../app/models/user")
+require File.expand_path(File.dirname(__FILE__) + "/../../app/models/items")
+require File.expand_path(File.dirname(__FILE__) + "/../../app/models/tag")
+require File.expand_path(File.dirname(__FILE__) + "/../../app/models/comment")
+require File.expand_path(File.dirname(__FILE__) + "/../../app/models/checkout")
 
 module WithinHelpers
   def with_scope(locator)

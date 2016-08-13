@@ -33,7 +33,7 @@
                 - if (session[:user] != nil && session[:user]["id"] == @item.user["id"])
                     = form_tag submit_tag_path(@tag), :method => :put do
                         = hidden_field :tag, :item_id, :value => @item.id
-                        = text_field :tag, :tag
+                        = text_field :tag, :tag, placeholder: "Add Tag"
                         = submit_tag '+'
     - if (session[:user] != nil)
         %tr

@@ -19,6 +19,18 @@ module NavigationHelpers
       '/users/'
     when /^the Create New User page/ 
       '/users/new'
+    when /^the User Login page/ 
+      '/user/login'
+    when /^the Listings page/ 
+      '/items'
+    when /^the Create new Listing page/ 
+      '/items/new'
+    when /^the Edit Item page/ 
+      '/items/5/edit'
+    when /^the Search Results page/ 
+      '/item/search'
+    when /^the Checkout Item page/ 
+      '/checkout/new/1'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
