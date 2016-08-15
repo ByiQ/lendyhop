@@ -5,21 +5,18 @@ class UsersController < ApplicationController
   end
 
   def show
-    id = params[:id] # retrieve movie ID from URI route
-    @user = User.find(id) # look up movie by unique ID
-    # will render app/views/movies/show.<extension> by default
+    id = params[:id]
+    @user = User.find(id)
   end
 
   def index
     @users = User.all
   end
 
-  def new
-    #default: render 'new' template
-  end
-
   def create
     @par = user_params
+    
+    # create user if everything is filled out
     if @par.has_value?('')
       flash[:notice] = "User " + (@par[:user_name].nil? ? "Unknown" : @par[:user_name]) + " failed"
       redirect_to new_user_path
@@ -47,8 +44,11 @@ class UsersController < ApplicationController
   end
   
   def verify
+    # login is a two-step process, with this being step 2
     name = user_params[:user_name]
     @user = User.where(["user_name = ?", name]).first
+    
+    # if a valid username, login
     if (!@user.nil?)
       session[:user] = @user
       session[:username] = @user.user_name;
@@ -57,7 +57,6 @@ class UsersController < ApplicationController
       flash[:notice] = "Username " + name + " not recognized"
       redirect_to login_user_path
     end
-    #redirect_to user_path(@user.id)
   end
 
   def update
@@ -72,12 +71,6 @@ class UsersController < ApplicationController
     @user.destroy
     flash[:notice] = "User '#{@user.firstname}' deleted."
     redirect_to items_path
-  end
-
-  private
-  
-  def sort_column
-    #Movies.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
 
 end

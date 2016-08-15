@@ -13,20 +13,26 @@ class CheckoutsController < ApplicationController
   end
 
   def new
+    # only users can check out
     if (session[:user] == nil)
       flash[:notice] = "You must be logged in to checkout this item"
       redirect_to item_path(params[:id])
     end
+    
     @item = Item.find(params[:id])
     reserves = Checkout.where(["item_id = ?", params[:id]])
     @days = _days
     @slots = _slots
+    
+    # find the already selected times
     totalbintime = 0b0
     reserves.each do |reserve|
       totalbintime = totalbintime | reserve.bintime
     end
+    
     totalbintime = totalbintime >> 1
-    puts totalbintime
+    
+    # parse the binary time into a hash of distinct time slots
     @taken = {}
     @days.reverse.each do |prefix|
       @slots.reverse.each do |suffix|
@@ -41,12 +47,17 @@ class CheckoutsController < ApplicationController
     days = _days
     slots = _slots
     bintime = 0b0
+    
+    # create an integer representation of the selected times
     days.each do |prefix|
       slots.each do |suffix|
         bintime = (bintime | (pars[prefix + suffix].to_i & 1)) << 1
       end
     end
+    
     @par = checkout_params
+    
+    # will always be >0 if at least one was selected
     if (bintime > 0)
       @par[:bintime] = bintime
       @checkout = Checkout.create!(@par)

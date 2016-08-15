@@ -9,10 +9,13 @@ class CommentsController < ApplicationController
   
   def submit
     @par = comment_params
+    
+    # only users can comment
     if (session[:user] == nil)
       flash[:notice] = "Please log in to submit an comment"
       redirect_to item_path(@par[:item_id])
     end
+    
     @par[:user_id] = session[:user]['id']
     @comment = Comment.create!(@par)
     redirect_to item_path(@par[:item_id])
