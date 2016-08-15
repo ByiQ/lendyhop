@@ -13,6 +13,10 @@ class CheckoutsController < ApplicationController
   end
 
   def new
+    if (session[:user] == nil)
+      flash[:notice] = "You must be logged in to checkout this item"
+      redirect_to item_path(params[:id])
+    end
     @item = Item.find(params[:id])
     reserves = Checkout.where(["item_id = ?", params[:id]])
     @days = _days

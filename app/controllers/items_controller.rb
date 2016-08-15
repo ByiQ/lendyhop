@@ -59,6 +59,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    if (session[:user] == nil)
+      flash[:notice] = "You must be logged in to the owning account of this item to edit it"
+      redirect_to item_path(params[:id])
+    end
     @item = Item.find params[:id]
   end
 
